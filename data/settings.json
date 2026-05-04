@@ -1,0 +1,5 @@
+{
+  "notifications": true,
+  "security": "high",
+  "resumeLink": "https://example.com/resume.pdf"
+}
