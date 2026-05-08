@@ -12,10 +12,13 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true)
+    const handle = requestAnimationFrame(() => setMounted(true));
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      cancelAnimationFrame(handle);
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   const navLinks = [
@@ -34,7 +37,6 @@ export function Navbar() {
           GANESH RV
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -64,7 +66,6 @@ export function Navbar() {
             Hire Me
           </a>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 text-on-surface"
             onClick={() => setIsOpen(!isOpen)}
@@ -74,7 +75,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

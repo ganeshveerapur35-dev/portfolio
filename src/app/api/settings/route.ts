@@ -20,13 +20,11 @@ export async function POST(req: Request) {
   try {
     const newSettings = await req.json();
     
-    // Ensure the data directory exists
     const dataDir = path.dirname(settingsPath);
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true });
     }
     
-    // Read existing to merge, or use new directly
     let existingSettings = {};
     if (fs.existsSync(settingsPath)) {
       existingSettings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));

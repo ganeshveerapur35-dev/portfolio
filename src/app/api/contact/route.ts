@@ -9,30 +9,27 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
     }
 
-    // Creating ethereal test account dynamically for demonstration purposes
-    // IN PRODUCTION: Replace with your actual SMTP credentials or a service like Resend/SendGrid
     const testAccount = await nodemailer.createTestAccount();
 
     const transporter = nodemailer.createTransport({
       host: "smtp.ethereal.email",
       port: 587,
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
-        user: testAccount.user, // generated ethereal user
-        pass: testAccount.pass, // generated ethereal password
+        user: testAccount.user,
+        pass: testAccount.pass,
       },
     });
 
-    // Send mail with defined transport object
     const info = await transporter.sendMail({
-      from: `"${name}" <${email}>`, // sender address
-      to: "ganeshveerapur35@gmail.com", // receiver address (from user info)
-      subject: `New Portfolio Message from ${name}`, // Subject line
-      text: message, // plain text body
+      from: `"${name}" <${email}>`,
+      to: "ganeshveerapur35@gmail.com",
+      subject: `New Portfolio Message from ${name}`,
+      text: message,
       html: `
         <h3>Message from: ${name} (${email})</h3>
         <p>${message}</p>
-      `, // html body
+      `,
     });
 
     console.log("Message sent: %s", info.messageId);
@@ -41,7 +38,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ 
       success: true, 
       message: 'Message sent successfully!',
-      previewUrl: nodemailer.getTestMessageUrl(info) // Usually don't send this in prod
+      previewUrl: nodemailer.getTestMessageUrl(info)
     });
   } catch (error) {
     console.error("Failed to send email:", error);

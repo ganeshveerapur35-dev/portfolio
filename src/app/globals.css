@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 
 @theme {
   --color-primary: var(--primary);
@@ -36,13 +37,10 @@
     --on-surface-variant: #065f46;
     --outline: #065f46;
     --outline-variant: #d1fae5;
-
-    /* Background Gradient Colors - Light */
     --bg-gradient-1: #f0fdf4;
     --bg-gradient-2: #fffbeb;
     --bg-gradient-3: #ffffff;
   }
-
   .dark {
     --primary: #34d399;
     --on-primary: #064e3b;
@@ -56,14 +54,11 @@
     --on-surface-variant: #d1fae5;
     --outline: #065f46;
     --outline-variant: #064e3b;
-
-    /* Background Gradient Colors - Dark */
     --bg-gradient-1: #064e3b;
     --bg-gradient-2: #451a03;
     --bg-gradient-3: #022c22;
   }
 }
-
 @layer base {
   * {
     border-color: var(--color-outline-variant);

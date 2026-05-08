@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Download } from "lucide-react"
+import { Download } from "lucide-react"
 
 export function Hero() {
   return (
@@ -12,7 +12,6 @@ export function Hero() {
         transition={{ duration: 0.6 }}
         className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-primary mb-8 border border-primary/20"
       >
-
       </motion.div>
 
       <motion.h1

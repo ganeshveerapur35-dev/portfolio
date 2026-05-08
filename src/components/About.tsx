@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Mail } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "./icons"
+import Image from "next/image"
 
 const TwitterIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,9 +28,11 @@ export function About() {
           viewport={{ once: true }}
           className="rounded-2xl overflow-hidden glass-card p-4 max-w-sm mx-auto md:mx-0"
         >
-          <img 
+          <Image 
             src="/About_image.jpeg" 
             alt="Ganesh Veerapur" 
+            width={500}
+            height={500}
             className="w-full h-auto rounded-xl shadow-lg"
           />
         </motion.div>

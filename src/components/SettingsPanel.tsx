@@ -23,7 +23,6 @@ export function SettingsPanel({ isOpen, onClose }: { isOpen: boolean; onClose: (
   const [, setSaving] = useState(false)
   const [savedStatus, setSavedStatus] = useState(false)
 
-  // Avoid hydration mismatch for theme
   useEffect(() => {
     setMounted(true)
     if (isOpen) {
@@ -101,7 +100,6 @@ export function SettingsPanel({ isOpen, onClose }: { isOpen: boolean; onClose: (
                <div className="flex justify-center p-8"><span className="animate-pulse">Loading settings...</span></div>
             ) : (
               <div className="space-y-8">
-                {/* Theme Toggle */}
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-on-surface-variant flex items-center gap-2">
                     <Sun size={16} /> Appearance
@@ -131,7 +129,6 @@ export function SettingsPanel({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   </div>
                 </div>
 
-                {/* Notifications */}
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
                     <Bell size={16} /> Notifications
@@ -153,7 +150,6 @@ export function SettingsPanel({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   </div>
                 </div>
 
-                {/* Security Data */}
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--muted-foreground))] flex items-center gap-2">
                     <Shield size={16} /> Privacy
@@ -169,7 +165,6 @@ export function SettingsPanel({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   </select>
                 </div>
 
-                {/* Resume URL */}
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--muted-foreground))] flex items-center gap-2">
                     <FileText size={16} /> Edit Resume Link
