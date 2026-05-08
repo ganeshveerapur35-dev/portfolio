@@ -48,7 +48,7 @@ export function Hero() {
         <a
           href="/GANESH-RESUME.pdf"
           target="_blank"
-          className="border border-outline px-8 py-4 rounded-xl font-semibold hover:bg-surface-variant transition-all flex items-center gap-2 text-on-surface"
+          className="primary-gradient text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
         >
           <Download size={18} /> Download Resume
         </a>

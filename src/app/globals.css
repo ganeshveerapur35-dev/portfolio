@@ -77,15 +77,11 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(var(--background), 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(var(--outline), 0.1);
+    @apply bg-surface/10 backdrop-blur-md border border-outline-variant/30;
   }
   
   .dark .glass-card {
-    background: rgba(6, 78, 59, 0.2);
-    border: 1px solid rgba(52, 211, 153, 0.1);
+    @apply bg-surface-variant/20 border-primary/10;
   }
 
   .primary-gradient {

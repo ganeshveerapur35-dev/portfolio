@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Pulse-Analytics Engine",
     description: "A high-performance data processing engine designed for real-time stock market analysis.",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
     tags: ["Python", "Node.js", "Redis"],
     github: "https://github.com/ganeshveerapur35-dev",
     demo: "#"

@@ -4,23 +4,23 @@ import { motion } from "framer-motion"
 
 const education = [
   {
-    period: "2022 - Present",
+    period: "2023 - 2026",
     degree: "Bachelor of Computer Applications (BCA)",
-    institution: "V.V.S Institute of Management",
-    description: "Focusing on Computer Science fundamentals, Web Technologies, and Software Engineering principles."
+    institution: "KLE Society's College of BCA Khanapur (RCUB)",
+    description: "Focusing on Computer Science fundamentals, Web Technologies, and Programming Languages."
   },
   {
-    period: "2020 - 2022",
+    period: "2020 - 2023",
     degree: "Pre-University Course (PUC)",
-    institution: "St. Joseph's College",
-    description: "Major in Physics, Chemistry, Mathematics, and Computer Science."
+    institution: "St.Theresa PU College Alnavar",
+    description: "Major in Accountancy, Business studies, and Economics"
   }
 ]
 
 export function Education() {
   return (
     <section id="education" className="py-24 max-w-[1200px] mx-auto px-6">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -28,10 +28,10 @@ export function Education() {
       >
         Academic Journey
       </motion.h2>
-      
+
       <div className="relative max-w-3xl border-l-2 border-outline-variant ml-4 md:ml-8 pl-8 space-y-12">
         {education.map((item, index) => (
-          <motion.div 
+          <motion.div
             key={item.degree}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

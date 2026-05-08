@@ -23,14 +23,15 @@ export function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ]
 
   return (
     <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1200px] z-50 transition-all duration-300 ${scrolled ? "top-2" : "top-4"}`}>
       <div className="rounded-2xl border border-outline-variant bg-surface/70 backdrop-blur-md shadow-xl flex items-center justify-between px-6 md:px-8 py-3">
-        <div className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-          GANESH
+        <div className="text-xl font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+          GANESH RV
         </div>
 
         {/* Desktop Menu */}
@@ -58,14 +59,14 @@ export function Navbar() {
 
           <a 
             href="#contact"
-            className="hidden sm:block bg-primary text-on-primary px-6 py-2 rounded-full font-semibold hover:opacity-90 active:scale-95 transition-all text-sm"
+            className="hidden sm:block bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:from-red-600 hover:to-red-800 active:scale-95 transition-all text-sm shadow-md shadow-red-500/20"
           >
             Hire Me
           </a>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-on-surface"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,13 +83,13 @@ export function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-20 left-0 w-full md:hidden"
           >
-            <div className="mx-2 glass-card rounded-2xl p-6 flex flex-col gap-4 shadow-2xl">
+            <div className="mx-2 bg-surface/95 backdrop-blur-xl border border-outline-variant rounded-2xl p-6 flex flex-col gap-4 shadow-2xl">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium py-2 border-b border-outline-variant/30 last:border-0"
+                  className="text-on-surface hover:text-primary text-lg font-medium py-2 border-b border-outline-variant/30 last:border-0 transition-colors"
                 >
                   {link.name}
                 </a>
@@ -96,7 +97,7 @@ export function Navbar() {
               <a 
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 bg-primary text-on-primary px-6 py-3 rounded-xl font-semibold text-center"
+                className="mt-4 bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-md shadow-red-500/20"
               >
                 Hire Me
               </a>
