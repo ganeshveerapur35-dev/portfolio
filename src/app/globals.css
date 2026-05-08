@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import "tailwindcss";
 
 @theme {
   --color-primary: var(--primary);
@@ -14,7 +14,7 @@
   --color-on-surface-variant: var(--on-surface-variant);
   --color-outline: var(--outline);
   --color-outline-variant: var(--outline-variant);
-  
+
   --font-display: "Inter", sans-serif;
   --font-code: "monospace";
 
@@ -41,6 +41,7 @@
     --bg-gradient-2: #fffbeb;
     --bg-gradient-3: #ffffff;
   }
+
   .dark {
     --primary: #34d399;
     --on-primary: #064e3b;
@@ -59,10 +60,12 @@
     --bg-gradient-3: #022c22;
   }
 }
+
 @layer base {
   * {
     border-color: var(--color-outline-variant);
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-on-background);
@@ -74,7 +77,7 @@
   .glass-card {
     @apply bg-surface/10 backdrop-blur-md border border-outline-variant/30;
   }
-  
+
   .dark .glass-card {
     @apply bg-surface-variant/20 border-primary/10;
   }
@@ -98,9 +101,17 @@
   }
 
   @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .animate-gradient {
@@ -112,4 +123,3 @@
     background: linear-gradient(-45deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3), var(--bg-gradient-1));
   }
 }
-
