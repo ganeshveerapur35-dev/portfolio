@@ -34,7 +34,7 @@ export function Navbar() {
     <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1200px] z-50 transition-all duration-300 ${scrolled ? "top-2" : "top-4"}`}>
       <div className="rounded-2xl border border-outline-variant bg-surface/70 backdrop-blur-md shadow-xl flex items-center justify-between px-6 md:px-8 py-3">
         <div className="text-xl font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
-          GANESH RV
+          MR.GANESH
         </div>
 
         <div className="hidden md:flex items-center gap-8">
@@ -59,7 +59,7 @@ export function Navbar() {
             {!mounted && <div className="w-5 h-5" />}
           </button>
 
-          <a 
+          <a
             href="#contact"
             className="hidden sm:block bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:from-red-600 hover:to-red-800 active:scale-95 transition-all text-sm shadow-md shadow-red-500/20"
           >
@@ -94,7 +94,7 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a 
+              <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
                 className="mt-4 bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-md shadow-red-500/20"

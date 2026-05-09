@@ -30,15 +30,16 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="space-y-8">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 min-w-0">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                 <Mail size={20} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Email</p>
-                <p className="text-on-background font-medium">ganeshveerapur35@gmail.com</p>
+                <p className="text-on-background font-medium break-all">ganeshveerapur35@gmail.com</p>
               </div>
             </div>
+
             
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary shrink-0">

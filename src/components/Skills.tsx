@@ -1,11 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Code2, Layers, Wrench } from "lucide-react"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const skillCategories = [
   {
     title: "Core",
-    icon: "code",
+    icon: Code2,
     color: "border-l-primary",
     iconColor: "text-primary",
     bgColor: "bg-primary/10",
@@ -13,7 +15,7 @@ const skillCategories = [
   },
   {
     title: "Frameworks",
-    icon: "layers",
+    icon: Layers,
     color: "border-l-tertiary",
     iconColor: "text-tertiary",
     bgColor: "bg-tertiary/10",
@@ -21,7 +23,7 @@ const skillCategories = [
   },
   {
     title: "Tools",
-    icon: "construction",
+    icon: Wrench,
     color: "border-l-secondary",
     iconColor: "text-secondary",
     bgColor: "bg-secondary/10",
@@ -29,7 +31,9 @@ const skillCategories = [
   }
 ]
 
+
 export function Skills() {
+  const isMobile = useMediaQuery("(max-width: 768px)")
   return (
     <section id="skills" className="py-24 max-w-[1200px] mx-auto px-6">
       <motion.h2 
@@ -45,16 +49,14 @@ export function Skills() {
         {skillCategories.map((category, index) => (
           <motion.div
             key={category.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true, margin: isMobile ? "-10px" : "-50px" }}
+            transition={{ delay: isMobile ? 0 : index * 0.1 }}
             className={`glass-card p-8 rounded-2xl border-l-4 ${category.color} hover:translate-y-[-4px] transition-all`}
           >
             <div className="flex items-center gap-4 mb-6">
-              <span className={`material-symbols-outlined ${category.iconColor} text-3xl`}>
-                {category.icon}
-              </span>
+              <category.icon className={`${category.iconColor} w-8 h-8`} />
               <h3 className="text-xl font-bold text-on-background">{category.title}</h3>
             </div>
             

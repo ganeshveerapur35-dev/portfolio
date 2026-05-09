@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
+
 
 @theme {
   --color-primary: var(--primary);
@@ -61,21 +61,42 @@
   }
 }
 
+
+
+
 @layer base {
   * {
     border-color: var(--color-outline-variant);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-on-background);
     font-family: var(--font-display);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (max-width: 768px) {
+    * {
+      text-shadow: none !important;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+    }
   }
 }
 
+
 @layer utilities {
   .glass-card {
-    @apply bg-surface/10 backdrop-blur-md border border-outline-variant/30;
+    @apply bg-surface/10 backdrop-blur-[8px] md:backdrop-blur-md border border-outline-variant/30;
+    transform: translateZ(0);
+    will-change: backdrop-filter;
   }
 
   .dark .glass-card {
@@ -85,6 +106,9 @@
   .primary-gradient {
     background: linear-gradient(135deg, #059669 0%, #d97706 100%);
   }
+
+
+
 
   .text-display {
     font-size: clamp(2.5rem, 8vw, 4rem);
@@ -115,9 +139,19 @@
   }
 
   .animate-gradient {
-    background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+    background-size: 200% 200%;
+    animation: gradient-shift 30s linear infinite;
+    will-change: background-position;
+    transform: translateZ(0);
   }
+
+  @media (min-width: 768px) {
+    .animate-gradient {
+      background-size: 400% 400%;
+      animation: gradient-shift 15s ease infinite;
+    }
+  }
+
 
   .bg-animated-gradient {
     background: linear-gradient(-45deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3), var(--bg-gradient-1));

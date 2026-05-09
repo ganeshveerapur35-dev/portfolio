@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Trophy } from "lucide-react"
 
 export function Achievements() {
   return (
@@ -21,8 +22,9 @@ export function Achievements() {
         className="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 border-l-4 border-tertiary"
       >
         <div className="w-16 h-16 rounded-full primary-gradient flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
-          <span className="material-symbols-outlined text-white text-3xl">emoji_events</span>
+          <Trophy className="text-white w-8 h-8" />
         </div>
+
         <div className="flex-1">
           <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
             <h3 className="text-xl font-bold text-on-background">CODEFIESTA Hackathon</h3>

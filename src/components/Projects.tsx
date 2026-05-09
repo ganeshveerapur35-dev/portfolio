@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ExternalLink } from "lucide-react"
 import Image from "next/image"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const GithubIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,6 +39,7 @@ const projects = [
 ]
 
 export function Projects() {
+  const isMobile = useMediaQuery("(max-width: 768px)")
   return (
     <section id="projects" className="py-24 px-6 md:px-8 max-w-[1200px] mx-auto">
       <div className="flex flex-col gap-4 mb-16">
@@ -49,10 +51,10 @@ export function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true, margin: isMobile ? "-10px" : "-50px" }}
+            transition={{ delay: isMobile ? 0 : index * 0.1 }}
             className="glass-card rounded-3xl overflow-hidden group border border-outline-variant/30 hover:border-primary/50 transition-all duration-500"
           >
             <div className="relative aspect-video overflow-hidden">
@@ -61,8 +63,11 @@ export function Projects() {
                 alt={project.title}
                 width={800}
                 height={450}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                loading={index < 2 ? "eager" : "lazy"}
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                 <div className="flex gap-4">
                   <a href={project.github} target="_blank" className="p-3 bg-surface rounded-full hover:bg-primary hover:text-on-primary transition-all text-on-surface">
