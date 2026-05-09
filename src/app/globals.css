@@ -87,7 +87,7 @@
   @media (max-width: 768px) {
     * {
       text-shadow: none !important;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
     }
   }
 }
@@ -95,13 +95,12 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-surface/10 backdrop-blur-[8px] md:backdrop-blur-md border border-outline-variant/30;
-    transform: translateZ(0);
+    @apply bg-surface/40 md:bg-surface/10 backdrop-blur-[2px] md:backdrop-blur-md border border-outline-variant/50 md:border-outline-variant/30;
     will-change: backdrop-filter;
   }
 
   .dark .glass-card {
-    @apply bg-surface-variant/20 border-primary/10;
+    @apply bg-surface-variant/40 md:bg-surface-variant/20 border-primary/20 md:border-primary/10;
   }
 
   .primary-gradient {
