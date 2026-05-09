@@ -41,7 +41,8 @@ const projects = [
 export function Projects() {
   const isMobile = useMediaQuery("(max-width: 768px)")
   return (
-    <section id="projects" className="py-24 px-6 md:px-8 max-w-[1200px] mx-auto">
+    <section id="projects" className="py-24 px-4 md:px-8 max-w-[1200px] mx-auto">
+
       <div className="flex flex-col gap-4 mb-16">
         <h2 className="text-h2 text-primary">Featured Projects</h2>
         <div className="h-1 w-24 bg-gradient-to-r from-primary to-transparent rounded-full" />

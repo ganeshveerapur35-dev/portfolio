@@ -32,8 +32,8 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1200px] z-50 transition-all duration-300 ${scrolled ? "top-2" : "top-4"}`}>
-      <div className="rounded-2xl border border-outline-variant bg-surface/70 backdrop-blur-md shadow-xl flex items-center justify-between px-6 md:px-8 py-3">
-        <div className="text-xl font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+      <div className="rounded-2xl border border-outline-variant bg-surface/70 backdrop-blur-md shadow-xl flex items-center justify-between px-5 md:px-8 py-3">
+        <div className="text-lg md:text-xl font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent truncate max-w-[150px] md:max-w-none">
           MR.GANESH
         </div>
 
@@ -52,11 +52,11 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface"
+            className="p-1.5 md:p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface"
             aria-label="Toggle Theme"
           >
-            {mounted && (theme === "dark" ? <Sun size={20} /> : <Moon size={20} />)}
-            {!mounted && <div className="w-5 h-5" />}
+            {mounted && (theme === "dark" ? <Sun size={18} className="md:w-5 md:h-5" /> : <Moon size={18} className="md:w-5 md:h-5" />)}
+            {!mounted && <div className="w-4.5 h-4.5 md:w-5 md:h-5" />}
           </button>
 
           <a

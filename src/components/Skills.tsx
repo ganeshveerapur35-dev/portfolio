@@ -35,7 +35,8 @@ const skillCategories = [
 export function Skills() {
   const isMobile = useMediaQuery("(max-width: 768px)")
   return (
-    <section id="skills" className="py-24 max-w-[1200px] mx-auto px-6">
+    <section id="skills" className="py-24 max-w-[1200px] mx-auto px-4 md:px-6">
+
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

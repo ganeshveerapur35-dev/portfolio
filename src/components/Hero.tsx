@@ -8,7 +8,8 @@ export function Hero() {
   const isMobile = useMediaQuery("(max-width: 768px)")
 
   return (
-    <section id="hero" className="py-24 md:py-32 flex flex-col items-center text-center px-6">
+    <section id="hero" className="pt-32 pb-24 md:pt-32 md:pb-32 flex flex-col items-center text-center px-6">
+
       <motion.div
         initial={{ opacity: 0, y: isMobile ? 5 : 20 }}
         animate={{ opacity: 1, y: 0 }}

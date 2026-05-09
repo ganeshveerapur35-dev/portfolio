@@ -29,7 +29,7 @@ export function Education() {
         Academic Journey
       </motion.h2>
 
-      <div className="relative max-w-3xl border-l-2 border-outline-variant ml-4 md:ml-8 pl-8 space-y-12">
+      <div className="relative max-w-3xl border-l-2 border-outline-variant ml-2 md:ml-8 pl-6 md:pl-12 space-y-12">
         {education.map((item, index) => (
           <motion.div
             key={item.degree}
@@ -39,7 +39,8 @@ export function Education() {
             transition={{ delay: index * 0.1 }}
             className="relative"
           >
-            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full primary-gradient border-4 border-background"></div>
+            <div className="absolute -left-[35px] md:-left-[53px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full primary-gradient border-4 border-background shadow-sm"></div>
+
             <div>
               <span className="text-sm font-semibold text-primary mb-2 block uppercase tracking-wider">
                 {item.period}

@@ -10,8 +10,9 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 max-w-[1200px] mx-auto px-6">
-      <div className="max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+    <section id="contact" className="py-24 max-w-[1200px] mx-auto px-4 md:px-6">
+      <div className="max-w-4xl mx-auto glass-card p-6 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -z-10" />
         
         <div className="text-center mb-12">
